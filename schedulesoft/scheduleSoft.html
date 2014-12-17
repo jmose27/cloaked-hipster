@@ -1,0 +1,953 @@
+<!DOCTYPE html> 
+<html>
+  <style type="text/css">
+  	 #date-screen, #empAvail-screen, #schedule-screen{
+  		display: none;
+  	}
+
+  </style>
+  <head>
+  </head>
+  <body>
+	<div id='date-screen'>
+		<h3> Please enter the date the schedule will begin</h3>
+		<input type ="text" id="startDate">
+		<button id="dateSubmit">Submit</button>
+	</div>
+	<div id='empAvail-screen'>
+		<table id="employee1" cellpadding="1" cellspacing="1"> 
+			
+			<tr><td>Employee1</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftB"></td>
+					<td>Shift C <input type="checkbox" id="shiftC"></td>
+					<td>Shift D <input type="checkbox" id="shiftD"></td>
+					<td>Shift E <input type="checkbox" id="shiftE"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftB"></td>
+					<td>Shift C <input type="checkbox" id="shiftC"></td>
+					<td>Shift D <input type="checkbox" id="shiftD"></td>
+					<td>Shift E <input type="checkbox" id="shiftE"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftB"></td>
+					<td>Shift C <input type="checkbox" id="shiftC"></td>
+					<td>Shift D <input type="checkbox" id="shiftD"></td>
+					<td>Shift E <input type="checkbox" id="shiftE"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftB"></td>
+					<td>Shift C <input type="checkbox" id="shiftC"></td>
+					<td>Shift D <input type="checkbox" id="shiftD"></td>
+					<td>Shift E <input type="checkbox" id="shiftE"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+		
+	<table id="employee2" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee2</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+		<table id="employee3" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee3</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+	<table id="employee4" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee4</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+		<table id="employee5" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee5</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+		
+		<table id="employee6" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee6</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+
+	<table id="employee7" cellpadding="1" cellspacing="1"> 
+			<tr><td>Employee7</td></tr>
+
+			<tr>
+				<td id="startDate1">startDate1</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate2">startDate2</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate3">startDate3</td>
+					<td>Shift A <input type="checkbox" id="shiftA"></td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+					<td id="startDate4">startDate4</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate5">startDate5</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate6">startDate6</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+				<tr>
+				<td id="startDate7">startDate7</td>
+					<td>Shift A <input type="checkbox" id="shiftA">	</td>
+					<td>Shift B <input type="checkbox" id="shiftA"></td>
+					<td>Shift C <input type="checkbox" id="shiftA"></td>
+					<td>Shift D <input type="checkbox" id="shiftA"></td>
+					<td>Shift E <input type="checkbox" id="shiftA"></td>
+				</tr>
+		</table>
+		</div>
+		<div id='schedule-screen'>
+	
+	<table border="1" style="background-color:#FFFFCC;border-collapse:collapse;border:1px solid #FFCC00;color:#000000;width:100%" cellpadding="3" cellspacing="3">
+		<tr>
+			<td></td>
+			<td>Saterday</td>
+			<td>Sunday</td>
+			<td>Monday</td>
+			<td>Tuesday</td>
+			<td>Wensday</td>
+			<td>Thursday</td>
+			<td>Friday</td>
+
+		</tr>
+		<tr id="scheduleDates">
+			<td></td>
+			<td>startDate1</td>
+			<td>startDate2</td>
+			<td>startDate3</td>
+			<td>startDate4</td>
+			<td>startDate5</td>
+			<td>startDate6</td>
+			<td>startDate7</td>
+		</tr>
+		<tr>
+			<td>12:00 AM</td>
+			<td id ="startDate1a">A + E</td>
+			<td id ="startDate2a">A + E</td>
+			<td id ="startDate3a">A + E</td>
+			<td id ="startDate4a">A + E</td>
+			<td id ="startDate5a">A + E</td>
+			<td id ="startDate6a">A + E</td>
+			<td id ="startDate7a">A + E</td>
+		</tr>
+		<tr>
+			<td>12:30 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>1:00 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>1:30 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>2:00 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+				<td>2:30 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>3:00 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>3:30 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>4:00 AM</td>
+			<td id ="startDate2a">A</td>
+			<td id ="startDate3a">A</td>
+			<td id ="startDate4a">A</td>
+			<td id ="startDate5a">A</td>
+			<td id ="startDate6a">A</td>
+			<td id ="startDate7a">A</td>
+			<td id ="startDate7a">A</td>
+		</tr>
+		<tr>
+			<td>4:30 AM</td>
+			<td id ="startDate1a">A + B</td>
+			<td id ="startDate2a">A + B</td>
+			<td id ="startDate3a">A + B</td>
+			<td id ="startDate4a">A + B</td>
+			<td id ="startDate5a">A + B</td>
+			<td id ="startDate6a">A + B</td>
+			<td id ="startDate7a">A + B</td>
+		</tr>
+		<tr>
+			<td>5:00 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>5:30 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>6:00 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>6:30 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>7:00 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>7:30 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>8:00 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>8:30 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>9:00 AM</td>
+			<td id ="startDate2b">B</td>
+			<td id ="startDate3b">B</td>
+			<td id ="startDate4b">B</td>
+			<td id ="startDate5b">B</td>
+			<td id ="startDate6b">B</td>
+			<td id ="startDate7b">B</td>
+			<td id ="startDate7b">B</td>
+		</tr>
+		<tr>
+			<td>9:30 AM</td>
+			<td id ="startDate2b">B + C</td>
+			<td id ="startDate3b">B + C</td>
+			<td id ="startDate4b">B + C</td>
+			<td id ="startDate5b">B + C</td>
+			<td id ="startDate6b">B + C</td>
+			<td id ="startDate7b">B + C</td>
+			<td id ="startDate7b">B + C</td>
+		</tr>
+		<tr>
+			<td>10:00 AM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>10:30 AM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>11:00 AM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>11:30 AM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>12:00 PM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>12:30 PM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>1:00 PM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>1:30 PM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>2:00 PM</td>
+			<td id ="startDate2c">C</td>
+			<td id ="startDate3c">C</td>
+			<td id ="startDate4c">C</td>
+			<td id ="startDate5c">C</td>
+			<td id ="startDate6c">C</td>
+			<td id ="startDate7c">C</td>
+			<td id ="startDate7c">C</td>
+		</tr>
+		<tr>
+			<td>2:30 PM</td>
+			<td id ="startDate2c">C + D</td>
+			<td id ="startDate3c">C + D</td>
+			<td id ="startDate4c">C + D</td>
+			<td id ="startDate5c">C + D</td>
+			<td id ="startDate6c">C + D</td>
+			<td id ="startDate7c">C + D</td>
+			<td id ="startDate7c">C + D</td>
+		</tr>
+		<tr>
+			<td>3:00 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>3:30 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>4:00 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>4:30 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>5:00 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>5:30 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>6:00 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>6:30 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>7:00 PM</td>
+			<td id ="startDate2d">D</td>
+			<td id ="startDate3d">D</td>
+			<td id ="startDate4d">D</td>
+			<td id ="startDate5d">D</td>
+			<td id ="startDate6d">D</td>
+			<td id ="startDate7d">D</td>
+			<td id ="startDate7d">D</td>
+		</tr>
+		<tr>
+			<td>7:30 PM</td>
+			<td id ="startDate2d">D + E</td>
+			<td id ="startDate3d">D + E</td>
+			<td id ="startDate4d">D + E</td>
+			<td id ="startDate5d">D + E</td>
+			<td id ="startDate6d">D + E</td>
+			<td id ="startDate7d">D + E</td>
+			<td id ="startDate7d">D + E</td>
+		</tr>
+		<tr>
+			<td>8:00 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>8:30 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>9:00 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>9:30 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>10:00 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>10:30 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>11:00 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+		<tr>
+			<td>11:30 PM</td>
+			<td id ="startDate2e">E</td>
+			<td id ="startDate3e">E</td>
+			<td id ="startDate4e">E</td>
+			<td id ="startDate5e">E</td>
+			<td id ="startDate6e">E</td>
+			<td id ="startDate7e">E</td>
+			<td id ="startDate7e">E</td>
+		</tr>
+	</table>
+
+</div>
+	<script type="text/javascript" src="scheduleSoft.js"></script>
+  </body>
+
+</html>
