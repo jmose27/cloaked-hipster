@@ -8,13 +8,13 @@ var year =  "";
 var employee = {
 	name: null,
 	avalibilty: {
-											'day1':[],
-											'day2':[],
-											'day3':[],
-											'day4':[],
-											'day5':[],
-											'day6':[],
-											'day7':[]
+											day1:[],
+											day2:[],
+											day3:[],
+											day4:[],
+											day5:[],
+											day6:[],
+											day7:[]
 										},
 	hoursAvalibile: null,
 	hoursWorking: null,
@@ -51,9 +51,21 @@ app.Screen.prototype.hide = function() {
     app.Screen.currentScreen.getDiv().style.display = 'none';
 };
 
+var getAvalibilty = function(){
+	console.log('Called getAvaliblity')
+	var emp;
+	var h = 1;
+	var emptable = document.getElementById('Employee' + h);
+	while(emptable){ 
+		for (var i = 0, cell; cell = emptable.cells[i]; i++) {
+			console.log(cell.checked);
+		}		
+	}
+};
+
 
 // At this point, definition of the Screen constructor is done.
-
+employees.DiegoC = 
 // Create the screen instances.
 app.screens.loading = new app.Screen('loading');
 app.screens.date = new app.Screen('date');
@@ -64,8 +76,15 @@ app.screens.schedule = new app.Screen('schedule');
 // Initialize the currentScreen variable.
 //app.Screen.currentScreen = app.screens.date;
 app.screens.date.show();
+//creates employees static right now
+
+document.getElementById('avilSub'). onclick = function(){console.log("called on avilSub"); getAvalibilty();};
 
 
+
+
+
+//adds date to schedule
   document.getElementById('dateSubmit').onclick = function() {
 	scheduleStartDatev =  document.getElementById('startDate');
 	scheduleStartDate = document.getElementById('startDate').value;
@@ -86,9 +105,8 @@ app.screens.date.show();
 			}
 		}
 		year = scheduleStartDate.substring(begin, (scheduleStartDate.length));
-		console.log("for loop for parsing string");
-	}
-	var table = document.getElementById("scheduleDates");
+		}
+	/*var table = document.getElementById("scheduleDates");
 	var employee1 = document.getElementById("employee1");
 	var employee2 = document.getElementById("employee2");
 	var employee3 = document.getElementById("employee3");
@@ -96,8 +114,8 @@ app.screens.date.show();
 	var employee5 = document.getElementById("employee5");
 	var employee6 = document.getElementById("employee6");
 	var employee7 = document.getElementById("employee7");
-	//var row = table.cells[1].innerHTML;
-	console.log("above for loop");
+	//var row = table.cells[1].innerHTML;*/
+	
 	for(var i = 1, col; col = table.cells[i]; i++){
 		col.innerHTML = (month + '/' + day + '/' + year);
 		employee1.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
@@ -145,7 +163,6 @@ function dateChange(){
 			}
 		}
 		else day++;
-
 }
 
 function isLeapYear(year){
@@ -163,6 +180,6 @@ this.avalibilty = getAvalibilty(employee);
 
 }
 
-function getAvalibilty(employee){
+/*function getAvalibilty(employee){
 	employee.getElementById()
-}
+};*/
