@@ -5,9 +5,10 @@ var scheduleStartDate = "";
 var day = "";
 var month = "";
 var year =  "";
-var employee = {
-	name: null,
-	avalibilty: {
+var crew = [];
+var employee = function (name) {
+	this.name = name;
+	avalibilty = {
 											day1:[],
 											day2:[],
 											day3:[],
@@ -15,10 +16,23 @@ var employee = {
 											day5:[],
 											day6:[],
 											day7:[]
-										},
-	hoursAvalibile: null,
-	hoursWorking: null,
-}
+										};
+	hoursAvalibile = null;
+	hoursWorking =  null;
+};
+var adam = new employee('adam');
+var alex = new employee('alex');
+var daniel = new employee('daniel');
+var diego = new employee('diego');
+var doug = new employee('doug');
+var johnthan = new employee('johnthan');
+crew.push(adam);
+crew.push(alex);
+crew.push(daniel);
+crew.push(diego);
+crew.push(doug);
+crew.push(johnthan);
+
 var app = { 
   screens: {},   // application screens
   Screen: null,   // screen constructor
@@ -58,15 +72,19 @@ var getAvalibilty = function(){
 	var emptable = document.getElementById('employee' + h);
 	
 	while(emptable){ 
+		emptable = document.getElementById('employee' + h);
 		console.log(emptable)
-		for (var i = 1, cell; cell = emptable.cells[i]; i++) {
+		for(var i = 1, row; row = emptable.rows[i]; i++ ){
+			console.log(emptable.id)
+		for (var j = 1, cell; cell = row.cells[j]; j++) {
 			console.log(cell.innerHTML);
-			if(cell.checked){
+			/*if(cell.checked){
 				console.log("true");
 			}
 			else{
 				console.log("false");
-			}
+			}*/
+		}
 		}		
 		h++
 	}
@@ -80,6 +98,7 @@ app.screens.loading = new app.Screen('loading');
 app.screens.date = new app.Screen('date');
 app.screens.empAvail = new app.Screen('empAvail');
 app.screens.schedule = new app.Screen('schedule');
+employee.adam = new employee('adam');
 //app.screens.endgame =  new app.Screen('endgame')
 //app.screens.credits = new app.Screen('credits')
 // Initialize the currentScreen variable.
@@ -87,62 +106,9 @@ app.screens.schedule = new app.Screen('schedule');
 app.screens.date.show();
 //creates employees static right now
 
-document.getElementById('avilSub'). onclick = function(){console.log("called on avilSub"); getAvalibilty();};
+/* helper functions*********************************************************************/
 
 
-
-
-
-//adds date to schedule
-  document.getElementById('dateSubmit').onclick = function() {
-	scheduleStartDatev =  document.getElementById('startDate');
-	scheduleStartDate = document.getElementById('startDate').value;
-	app.screens.empAvail.show();
-	var begin = 0;
-	for (var i = 0; i < scheduleStartDate.length; i++){
-
-		if(begin < 1){
-
-			if(scheduleStartDate[i] == "/" || scheduleStartDate == "-"){
-				month = scheduleStartDate.substring(begin, i);
-				begin = i+1;
-			}
-		}else{
-			if(scheduleStartDate[i] == "/" || scheduleStartDate == "-"){
-				day = scheduleStartDate.substring(begin, i);
-				begin = i+1;
-			}
-		}
-		year = scheduleStartDate.substring(begin, (scheduleStartDate.length));
-		}
-	var table = document.getElementById("scheduleDates");
-	/*var employee1 = document.getElementById("employee1");
-	var employee2 = document.getElementById("employee2");
-	var employee3 = document.getElementById("employee3");
-	var employee4 = document.getElementById("employee4");
-	var employee5 = document.getElementById("employee5");
-	var employee6 = document.getElementById("employee6");
-	var employee7 = document.getElementById("employee7");
-	//var row = table.cells[1].innerHTML;*/
-	
-	for(var i = 1, col; col = table.cells[i]; i++){
-		col.innerHTML = (month + '/' + day + '/' + year);
-		employee1.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee2.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee3.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee4.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee5.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee6.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee7.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		dateChange();
-		 	
-
-	}
-	//app.screens.empAvail.show();
-	//alert("this is month " + month);
-	//alert("this is day " + day);
-	//alert("this is year " + year);
-};
 
 function dateChange(){
 			
@@ -192,3 +158,81 @@ this.avalibilty = getAvalibilty(employee);
 /*function getAvalibilty(employee){
 	employee.getElementById()
 };*/
+
+/*onclick functions *****************************************************************************************************/
+document.getElementById('avilSub'). onclick = function(){
+	
+	getAvalibilty(); 
+
+
+};
+
+
+//adds date to schedule
+  document.getElementById('dateSubmit').onclick = function() {
+	scheduleStartDatev =  document.getElementById('startDate');
+	scheduleStartDate = document.getElementById('startDate').value;
+	app.screens.empAvail.show();
+	var begin = 0;
+	for (var i = 0; i < scheduleStartDate.length; i++){
+
+		if(begin < 1){
+
+			if(scheduleStartDate[i] == "/" || scheduleStartDate == "-"){
+				month = scheduleStartDate.substring(begin, i);
+				begin = i+1;
+			}
+		}else{
+			if(scheduleStartDate[i] == "/" || scheduleStartDate == "-"){
+				day = scheduleStartDate.substring(begin, i);
+				begin = i+1;
+			}
+		}
+		year = scheduleStartDate.substring(begin, (scheduleStartDate.length));
+		}
+	var table = document.getElementById("scheduleDates");
+	/*var employee1 = document.getElementById("employee1");
+	var employee2 = document.getElementById("employee2");
+	var employee3 = document.getElementById("employee3");
+	var employee4 = document.getElementById("employee4");
+	var employee5 = document.getElementById("employee5");
+	var employee6 = document.getElementById("employee6");
+	var employee7 = document.getElementById("employee7");
+	//var row = table.cells[1].innerHTML;*/
+	
+	for(var i = 1, col; col = table.cells[i]; i++){
+		col.innerHTML = (month + '/' + day + '/' + year);
+		employee1.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee2.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee3.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee4.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee5.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee6.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee7.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		dateChange();
+		 	
+
+	}
+	var node = document.getElementById('container');
+	var newnode = document.createElement('select');
+	node.appendChild(newnode);
+	//node.add(newnode, 0);
+	
+	for(var i = 0; i < crew.length; i++){
+		var option = document.createElement('option');
+		option.id = crew[i].name;
+		option.value = crew[i].name;
+		option.text = crew[i].name;
+		newnode.appendChild(option);
+		
+	}
+	
+
+	//app.screens.empAvail.show();
+	//alert("this is month " + month);
+	//alert("this is day " + day);
+	//alert("this is year " + year);
+};
+document.getElementById('adam').onclick = function(){
+	
+};
