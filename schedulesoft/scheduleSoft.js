@@ -55,11 +55,20 @@ var getAvalibilty = function(){
 	console.log('Called getAvaliblity')
 	var emp;
 	var h = 1;
-	var emptable = document.getElementById('Employee' + h);
+	var emptable = document.getElementById('employee' + h);
+	
 	while(emptable){ 
-		for (var i = 0, cell; cell = emptable.cells[i]; i++) {
-			console.log(cell.checked);
+		console.log(emptable)
+		for (var i = 1, cell; cell = emptable.cells[i]; i++) {
+			console.log(cell.innerHTML);
+			if(cell.checked){
+				console.log("true");
+			}
+			else{
+				console.log("false");
+			}
 		}		
+		h++
 	}
 };
 
@@ -106,8 +115,8 @@ document.getElementById('avilSub'). onclick = function(){console.log("called on 
 		}
 		year = scheduleStartDate.substring(begin, (scheduleStartDate.length));
 		}
-	/*var table = document.getElementById("scheduleDates");
-	var employee1 = document.getElementById("employee1");
+	var table = document.getElementById("scheduleDates");
+	/*var employee1 = document.getElementById("employee1");
 	var employee2 = document.getElementById("employee2");
 	var employee3 = document.getElementById("employee3");
 	var employee4 = document.getElementById("employee4");
