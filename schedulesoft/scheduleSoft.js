@@ -5,18 +5,11 @@ var scheduleStartDate = "";
 var day = "";
 var month = "";
 var year =  "";
+var scheduleDates = []
 var crew = [];
 var employee = function (name) {
 	this.name = name;
-	avalibilty = {
-											day1:[],
-											day2:[],
-											day3:[],
-											day4:[],
-											day5:[],
-											day6:[],
-											day7:[]
-										};
+	avalibilty = [][];
 	hoursAvalibile = null;
 	hoursWorking =  null;
 };
@@ -108,7 +101,9 @@ app.screens.date.show();
 
 /* helper functions*********************************************************************/
 
-
+function nextChar(c, num) {
+    return String.fromCharCode(c.charCodeAt(0) + num);
+}
 
 function dateChange(){
 			
@@ -154,18 +149,68 @@ function employees(employeeBase) {
 this.avalibilty = getAvalibilty(employee);
 
 }
+function writeEmpAvil(name){
+	console.log(name);
+	if(!(document.getElementById(name + scheduleDates[0]))){
+	var container = document.getElementById('container');
+	var avaltable = document.createElement('Table');
+	avaltable.id = name + 'table';
+	avaltable.innerHTML = name
+	container.appendChild(avaltable);
+	for(var i  = 0; i < 7; i++){
+		var day = document.createElement('tr');
+		day.id = name + scheduleDates[i];
+		day.innerHTML = scheduleDates[i];
+		avaltable.appendChild(day);
+		for(var j = 0; j < 5; j++){
+			var shift = document.createElement('td')
+			shift.id = scheduleDates[i] + nextChar('A', j);
+			shift.innerHTML = 'Shift' +  nextChar('A', j);
+			var checkbox = document.createElement('input');
+			checkbox.type = "checkbox";
+			checkbox.id = name + i + ''+j;
+			//console.log(name + i + ''+j);
+			checkbox.name = j;
+			checkbox.innerHTML = 'Shift' +  nextChar('A', j);
+			day.appendChild(shift);
+			shift.appendChild(checkbox);
+		}
+	}
+  	var schedulesubmit =document.createElement('button');
+  	schedulesubmit.id = name;
+  	schedulesubmit.innerHTML = name + 'Avalibilty Submit';
+  	schedulesubmit.onclick = function(){addAvail(this.id)}; 
+  	avaltable.appendChild(schedulesubmit);
 
+  }
+}
+function addAvail(person){
+	var index;
+	for(var h = 0; h < crew.length; h++){
+	 if(crew[h].name == person){
+	 	index = h;
+	 }
+	}
+	var table = document.getElementById(person + 'table')
+	for(var i = 0, row; row = table.rows[i]; i++ ){
+		for (var j = 0, cell; cell = row.cells[j]; j++) {
+			console.log(i+ '' + j);
+			crew[index].avalibilty[i][j] = document.getElementById(person + i + '' + j).checked;
+			
+		}
+ 	}
+ }
 /*function getAvalibilty(employee){
 	employee.getElementById()
 };*/
 
 /*onclick functions *****************************************************************************************************/
-document.getElementById('avilSub'). onclick = function(){
+/*document.getElementById('avilSub').onclick = function(){
 	
 	getAvalibilty(); 
 
 
-};
+};*/
 
 
 //adds date to schedule
@@ -201,38 +246,38 @@ document.getElementById('avilSub'). onclick = function(){
 	//var row = table.cells[1].innerHTML;*/
 	
 	for(var i = 1, col; col = table.cells[i]; i++){
+		scheduleDates.push(month + '/' + day + '/' + year);
 		col.innerHTML = (month + '/' + day + '/' + year);
-		employee1.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		/*employee1.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
 		employee2.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
 		employee3.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
 		employee4.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
 		employee5.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
 		employee6.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
-		employee7.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);
+		employee7.rows[i].cells[0].innerHTML = (month + '/' + day + '/' + year);*/
 		dateChange();
 		 	
 
-	}
-	var node = document.getElementById('container');
-	var newnode = document.createElement('select');
-	node.appendChild(newnode);
-	//node.add(newnode, 0);
-	
-	for(var i = 0; i < crew.length; i++){
-		var option = document.createElement('option');
-		option.id = crew[i].name;
-		option.value = crew[i].name;
-		option.text = crew[i].name;
-		newnode.appendChild(option);
 		
 	}
 	
+	var node = document.getElementById('container');
+	for(var i = 0; i < crew.length; i++){
+		var option = document.createElement('button');
+		option.id = crew[i].name;
+		option.value = crew[i].name;
+		option.innerHTML = crew[i].name;
+		node.appendChild(option);
+		option.onclick = function(){writeEmpAvil(this.id)};
+		
+    	
+    }
+};		
 
-	//app.screens.empAvail.show();
-	//alert("this is month " + month);
-	//alert("this is day " + day);
-	//alert("this is year " + year);
-};
-document.getElementById('adam').onclick = function(){
+	//var newnode = document.createElement('button');
+	//node.appendChild(newnode);
+	//node.add(newnode, 0);
 	
-};
+	
+	
+	
