@@ -9,9 +9,9 @@ var scheduleDates = []
 var crew = [];
 var employee = function (name) {
 	this.name = name;
-	avalibilty = [][];
-	hoursAvalibile = null;
-	hoursWorking =  null;
+	this.availability = new Array([0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]);
+	this.hoursAvalibile = null;
+	this.hoursWorking =  null;
 };
 var adam = new employee('adam');
 var alex = new employee('alex');
@@ -58,7 +58,7 @@ app.Screen.prototype.hide = function() {
     app.Screen.currentScreen.getDiv().style.display = 'none';
 };
 
-var getAvalibilty = function(){
+/*var getavailability = function(){
 	console.log('Called getAvaliblity')
 	var emp;
 	var h = 1;
@@ -76,16 +76,16 @@ var getAvalibilty = function(){
 			}
 			else{
 				console.log("false");
-			}*/
+			}
 		}
 		}		
 		h++
 	}
-};
+};*/
 
 
 // At this point, definition of the Screen constructor is done.
-employees.DiegoC = 
+//employees.DiegoC = 
 // Create the screen instances.
 app.screens.loading = new app.Screen('loading');
 app.screens.date = new app.Screen('date');
@@ -146,7 +146,7 @@ function isLeapYear(year){
 
 
 function employees(employeeBase) {
-this.avalibilty = getAvalibilty(employee);
+this.availability = getavailability(employee);
 
 }
 function writeEmpAvil(name){
@@ -178,10 +178,15 @@ function writeEmpAvil(name){
 	}
   	var schedulesubmit =document.createElement('button');
   	schedulesubmit.id = name;
-  	schedulesubmit.innerHTML = name + 'Avalibilty Submit';
+  	schedulesubmit.innerHTML = name + 'availability Submit';
   	schedulesubmit.onclick = function(){addAvail(this.id)}; 
   	avaltable.appendChild(schedulesubmit);
 
+  }
+  else if(document.getElementById(name + 'table').style.display == 'none'){
+  	document.getElementById(name + 'table').style.display = 'block';
+  } else{
+  	document.getElementById(name + 'table').style.display = 'none'
   }
 }
 function addAvail(person){
@@ -194,20 +199,34 @@ function addAvail(person){
 	var table = document.getElementById(person + 'table')
 	for(var i = 0, row; row = table.rows[i]; i++ ){
 		for (var j = 0, cell; cell = row.cells[j]; j++) {
-			console.log(i+ '' + j);
-			crew[index].avalibilty[i][j] = document.getElementById(person + i + '' + j).checked;
+			var input = []
+			input.push(cell.checked)
+			crew[index].availability[i][j] = document.getElementById(person + i + '' + j).checked;
+			if(j == 4){
+				crew[index].availability.push(input);
+			
+			}
+			//console.log(crew[index].availability[i][j]);
+			
+			//crew[index].availability[i][j] = document.getElementById(person + i + '' + j).checked;
 			
 		}
  	}
+ for(var i = 0, row; row = table.rows[i]; i++ ){
+		for (var j = 0, cell; cell = row.cells[j]; j++) {
+			console.log(crew[index].availability[i][j]);
+		}
+	}
+
  }
-/*function getAvalibilty(employee){
+/*function getavailability(employee){
 	employee.getElementById()
 };*/
 
 /*onclick functions *****************************************************************************************************/
 /*document.getElementById('avilSub').onclick = function(){
 	
-	getAvalibilty(); 
+	getavailability(); 
 
 
 };*/
