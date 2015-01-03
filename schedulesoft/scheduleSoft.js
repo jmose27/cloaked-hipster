@@ -10,8 +10,8 @@ var crew = [];
 var employee = function (name) {
 	this.name = name;
 	this.availability = new Array([0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]);
-	this.hoursAvalibile = null;
-	this.hoursWorking =  null;
+	this.hoursAvalibile = 0;
+	this.hoursWorking =  0;
 };
 var adam = new employee('adam');
 var alex = new employee('alex');
@@ -175,48 +175,59 @@ function writeEmpAvil(name){
 			day.appendChild(shift);
 			shift.appendChild(checkbox);
 		}
+		
 	}
   	var schedulesubmit =document.createElement('button');
   	schedulesubmit.id = name;
-  	schedulesubmit.innerHTML = name + 'availability Submit';
+  	schedulesubmit.innerHTML = name + "'s availability Submit'";
   	schedulesubmit.onclick = function(){addAvail(this.id)}; 
   	avaltable.appendChild(schedulesubmit);
-
   }
   else if(document.getElementById(name + 'table').style.display == 'none'){
   	document.getElementById(name + 'table').style.display = 'block';
   } else{
   	document.getElementById(name + 'table').style.display = 'none'
   }
+  if(!document.getElementById('empbuttonsub')){
+  	var empbuttonsub = document.createElement('button');
+		empbuttonsub.id = 'empbuttonsub'
+		empbuttonsub.innerHTML = 'submit employee availability';
+		container.appendChild(document.getElementById('empAvail-screen'));
+  }
 }
+
+
 function addAvail(person){
+	document.getElementById(person + 'table').style.display = 'none';
 	var index;
 	for(var h = 0; h < crew.length; h++){
 	 if(crew[h].name == person){
 	 	index = h;
+	 	
 	 }
+	 crew[index].hoursAvalibile = 0;
 	}
+	
 	var table = document.getElementById(person + 'table')
 	for(var i = 0, row; row = table.rows[i]; i++ ){
 		for (var j = 0, cell; cell = row.cells[j]; j++) {
 			var input = []
 			input.push(cell.checked)
 			crew[index].availability[i][j] = document.getElementById(person + i + '' + j).checked;
-			if(j == 4){
-				crew[index].availability.push(input);
-			
-			}
-			//console.log(crew[index].availability[i][j]);
-			
-			//crew[index].availability[i][j] = document.getElementById(person + i + '' + j).checked;
-			
+			console.log(document.getElementById(person + i + '' + j).checked);
+			if(j == 4 && document.getElementById(person + i + '' + j).checked){
+				crew[index].hoursAvalibile += 4.5
+			}else if(document.getElementById(person + i + '' + j).checked){
+				crew[index].hoursAvalibile += 5;
+			}		
 		}
+ 		
  	}
- for(var i = 0, row; row = table.rows[i]; i++ ){
+ /*for(var i = 0, row; row = table.rows[i]; i++ ){
 		for (var j = 0, cell; cell = row.cells[j]; j++) {
 			console.log(crew[index].availability[i][j]);
 		}
-	}
+	}*/
 
  }
 /*function getavailability(employee){
